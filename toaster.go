@@ -2,8 +2,8 @@ package goaster
 
 import (
 	"github.com/a-h/templ"
-	"github.com/indaco/goaster/components"
-	"github.com/indaco/goaster/internal/viewmodel"
+	"github.com/digitalmint/goaster/components"
+	"github.com/digitalmint/goaster/internal/viewmodel"
 )
 
 // Toaster holds configuration for toast notifications.
@@ -39,11 +39,13 @@ func ToasterDefaults() *Toaster {
 func (t *Toaster) ToViewModel() viewmodel.ToasterViewModel {
 	var toasts []viewmodel.ToastViewModel
 	for _, toast := range t.Queue().GetMessagesAndDequeue() {
-		toasts = append(toasts, viewmodel.ToastViewModel{
-			Message: toast.Message,
-			Level:   toast.Level.String(),
-			Icon:    t.Icons[toast.Level],
-		})
+		toasts = append(
+			toasts, viewmodel.ToastViewModel{
+				Message: toast.Message,
+				Level:   toast.Level.String(),
+				Icon:    t.Icons[toast.Level],
+			},
+		)
 	}
 
 	return viewmodel.ToasterViewModel{
