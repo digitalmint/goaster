@@ -1,3 +1,14 @@
+
+
+> [!CAUTION]
+> 
+> This fork is not intended for public use.
+> 
+> It adds support for nonces for CSP policies.
+> 
+> No warranty implied; use at your own risk.
+
+
 <h1 align="center">
   goaster
 </h1>
