@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/indaco/goaster/examples/handlers"
+	"github.com/digitalmint/goaster/examples/handlers"
 )
 
 func main() {

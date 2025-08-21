@@ -3,7 +3,7 @@ package handlers
 import (
 	"net/http"
 
-	"github.com/indaco/goaster/examples/pages"
+	"github.com/digitalmint/goaster/examples/pages"
 
 	"github.com/a-h/templ"
 )

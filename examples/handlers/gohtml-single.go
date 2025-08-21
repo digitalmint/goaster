@@ -6,10 +6,10 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/indaco/goaster/examples/types"
+	"github.com/digitalmint/goaster/examples/types"
 
 	"github.com/a-h/templ"
-	"github.com/indaco/goaster"
+	"github.com/digitalmint/goaster"
 )
 
 func HandleGoHtmlSingle(w http.ResponseWriter, r *http.Request) {
@@ -33,7 +33,9 @@ func HandleGoHtmlSingle(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Parse the HTML template
-	tmpl := template.Must(template.New("index").Parse(`
+	tmpl := template.Must(
+		template.New("index").Parse(
+			`
 		<!DOCTYPE html>
 		<html lang="en">
 		<head>
@@ -46,7 +48,9 @@ func HandleGoHtmlSingle(w http.ResponseWriter, r *http.Request) {
 			{{ .Toast.HTML }}
 		</body>
 		</html>
-	`))
+	`,
+		),
+	)
 
 	// Execute the template with the provided data and write the output to the response writer
 	err = tmpl.Execute(w, data)
